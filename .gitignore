@@ -1,0 +1,32 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.env/
+.venv/
+env/
+venv/
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# MyPy
+.mypy_cache/
+
+# FastAPI's common settings
+*.log
+
+# Docker
+*.docker/
+
+# pytest cache
+.pytest_cache/
+
+# FastAPI project-specific (if any)
+*.db
+*.sqlite3
+
+# Environment variables
+.env

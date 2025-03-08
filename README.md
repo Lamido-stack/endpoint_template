@@ -1,23 +1,30 @@
-# FastAPI Project
+# Backend.Im
 
-This is a simple FastAPI project that includes two endpoints: one for user registration and another for user sign-up.
+This is a backend.Im template, for default endpoints
 
 ## Project Structure
 
 ```
-fastapi-project
-├── app
-│   ├── main.py
-│   ├── api
-│   │   ├── __init__.py
-│   │   └── endpoints
-│   │       ├── register.py
-│   │       └── signup.py
-│   └── models
-│       └── __init__.py
-├── requirements.txt
-└── README.md
+   endpoint_template/
+   ├── app/
+   │   ├── api/
+   │   │   ├── v1/
+   │   │   │   ├── routes/
+   │   │   │   │   ├── login.py
+   │   │   │   │   ├── signup.py
+   │   │   │   ├── models/
+   │   │   │   │   ├── user_model.py
+   │   │   │   ├── schemas/
+   │   │   │   │   ├── user_schema.py
+   │   │   │   ├── services/
+   │   │   │   │   ├── crud.py
+   │   │   │   ├── utils/
+   │   │   │   │   ├── auth.py
+   │   ├── database.py
+   │   ├── main.py
+   ├── requirements.txt
 ```
+
 
 ## Setup Instructions
 
@@ -58,12 +65,12 @@ You can access the API documentation at `http://127.0.0.1:8000/docs`.
 
 ## Endpoints
 
-- **Register Endpoint**: 
-  - URL: `/register`
-  - Method: `POST`
-  - Description: Handles user registration.
-
-- **Sign Up Endpoint**: 
+- **SignUp Endpoint**: 
   - URL: `/signup`
   - Method: `POST`
-  - Description: Handles user sign-up.
+  - Description: Handles SignUP.
+
+- **Login Endpoint**: 
+  - URL: `/Login`
+  - Method: `POST`
+  - Description: Handles user Login.

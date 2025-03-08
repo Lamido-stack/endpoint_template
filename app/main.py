@@ -1,14 +1,20 @@
 from fastapi import FastAPI
-from app.api.endpoints import register, signin
+from app.database import engine
+from app.api.v1.routes import login, signup
+from app.api.v1.models import user_model
 
 app = FastAPI()
 
-app.include_router(register.router, prefix="/register", tags=["register"])
-app.include_router(signin.router, prefix="/signin", tags=["signin"])
+user_model.Base.metadata.create_all(bind=engine)
+
+app.include_router(login.router, prefix="/login", tags=["auth"])
+app.include_router(signup.router, prefix="/signup", tags=["auth"])
+
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the FastAPI application!"}
+
 
 if __name__ == "__main__":
     import uvicorn
