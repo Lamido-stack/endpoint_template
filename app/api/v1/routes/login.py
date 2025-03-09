@@ -16,7 +16,6 @@ async def login(user: UserCreate, db: Session = Depends(get_db)):
     if db_user is None:
         raise HTTPException(status_code=400, detail="Invalid username or password")
     
-
     if not verify_password(user.password, db_user.password_hash):
         raise HTTPException(status_code=400, detail="Invalid username or password")
     

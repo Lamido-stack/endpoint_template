@@ -5,13 +5,14 @@ from app.api.v1.services.crud import create_user
 from app.database import get_db
 from app.api.v1.schemas.user_schema import UserCreate
 from app.api.v1.utils.auth import hash_password
+from app.api.v1.services.crud import get_user_by_username
 
 router = APIRouter()
 
-@router.post("/register")
-async def register(user: UserCreate, db: Session = Depends(get_db)):
+@router.post("/signup")
+async def signup(user: UserCreate, db: Session = Depends(get_db)):
 
-    db_user = db.query(User).filter(User.username == user.username).first()
+    db_user = get_user_by_username(db, user.username)
     if db_user:
         raise HTTPException(status_code=400, detail="Username already exist")
     

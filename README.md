@@ -66,7 +66,7 @@ You can access the API documentation at `http://127.0.0.1:8000/docs`.
 ## Endpoints
 
 - **SignUp Endpoint**: 
-  - URL: `/auth/register`
+  - URL: `/auth/signup`
   - Method: `POST`
   - Description: Handles SignUP.
 
