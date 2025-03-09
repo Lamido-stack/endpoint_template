@@ -7,8 +7,8 @@ app = FastAPI()
 
 user_model.Base.metadata.create_all(bind=engine)
 
-app.include_router(login.router, prefix="/login", tags=["auth"])
-app.include_router(signup.router, prefix="/signup", tags=["auth"])
+app.include_router(login.router, prefix="/auth", tags=["auth"])
+app.include_router(signup.router, prefix="/auth", tags=["auth"])
 
 
 @app.get("/")
